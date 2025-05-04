@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-pro",
+  "version": "1.0.0",
+  "description": "nodejs pro louisdev",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuanD-tech/nodejs-pro-louisdev.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Louis Luân Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuanD-tech/nodejs-pro-louisdev/issues"
+  },
+  "homepage": "https://github.com/LuanD-tech/nodejs-pro-louisdev#readme"
+}
