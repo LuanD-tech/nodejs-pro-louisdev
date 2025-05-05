@@ -1,0 +1,13 @@
+// Tạo tsconfig.json tại root
+
+{
+  "compilerOptions": {
+    "module":"commonjs",
+    "esModuleInterop":true,
+    "target":"es6",
+    "sourceMap":true,
+    "skipLibCheck":true,
+    "outDir":"dist"
+  }
+}
+
