@@ -1,8 +1,9 @@
 // const express = require('express')
 import express from "express"
+import 'dotenv/config'
 
 const app = express()
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 
 app.get('/', (req,res) => {
     res.send("This file is running through nodemon.")
@@ -14,4 +15,5 @@ app.get('/louisdev', (req,res) => {
 
 app.listen(8080, () => {
     console.log(`My App is running on port ${PORT}...`);
+    console.log('>>> env port', process.env.PORT);
 })
