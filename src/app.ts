@@ -5,8 +5,12 @@ import 'dotenv/config'
 const app = express()
 const PORT = process.env.PORT || 8080
 
+// config view engine
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
+
 app.get('/', (req,res) => {
-    res.send(`<h1>Helloooooo 👋!</h1>`)
+    res.render('home.ejs')
 });
 
 app.get('/louisdev', (req,res) => {
@@ -20,4 +24,5 @@ app.get('/abc_angel', (req,res) => {
 // Listen
 app.listen(PORT, () => {
     console.log(`My App is running on port ${PORT}...`);
+    console.log(__dirname + '/views');
 })
