@@ -8,10 +8,14 @@
     "start": "nodemon",
     "dev": "nodemon"
   },
-  "nodemonConfig":{
-    "watch": ["src"],
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
     "ext": "ts",
-    "ignore": ["node_modules"],
+    "ignore": [
+      "node_modules"
+    ],
     "exec": "ts-node ./src/app.ts"
   },
   "repository": {
@@ -30,6 +34,7 @@
   },
   "homepage": "https://github.com/LuanD-tech/nodejs-pro-louisdev#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "5.0.1"
   },
   "devDependencies": {
