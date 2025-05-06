@@ -1,6 +1,7 @@
 // const express = require('express')
 import express from "express"
 import 'dotenv/config'
+import webRoutes from "./routes/web"
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -9,20 +10,14 @@ const PORT = process.env.PORT || 8080
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 
-app.get('/', (req,res) => {
-    res.render('home.ejs')
-});
+// config routes
+webRoutes(app);
 
-app.get('/louisdev', (req,res) => {
-    res.send(`<h1>Hello. Louis here 😜</h1>`)
-});
-
-app.get('/abc_angel', (req,res) => {
-    res.send("🫰 Hi. abc_Angel Group Dance")
-});
+// config static files: images/css/js
+app.use(express.static('public'));
 
 // Listen
 app.listen(PORT, () => {
     console.log(`My App is running on port ${PORT}...`);
-    console.log(__dirname + '/views');
+    // console.log(__dirname + '/views');
 })
