@@ -2,11 +2,17 @@ import { Request, Response } from "express";
 
 // Home Page
 const getHomePage = (req: Request, res: Response) => {
-    return res.render('home')
+    return res.render('home');
 }
-// Create-User Page
+// Create-User Method
 const getCreateUserPage = (req: Request, res: Response) => {
-    return res.render('create-user')
+    return res.render('create-user');
 }
 
-export { getHomePage, getCreateUserPage };
+// Post-User Method
+const postCreateUser = (req,res) => {
+    console.log('>>> check data: ', req.body);
+    return res.redirect('/');
+}
+
+export { getHomePage, getCreateUserPage, postCreateUser };

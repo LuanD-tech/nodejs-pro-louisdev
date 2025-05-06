@@ -1,10 +1,38 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create User</title>
+    <title>Create Users</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <h2>Create A User</h2>
+    <div style="width: 600; margin: auto">
+        <h3 style="padding: 10px 0;">Create A User</h3>
+        <form action="/handle-create-user" method="post">
+            <!-- Name -->
+            <div class="mb-3">
+                <label class="form-label">Full Name:</label>
+                <input type="text" class="form-control" placeholder="your name">
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Email:</label>
+                <input type="email" class="form-control" placeholder="name@example.com">
+            </div>
+            <!-- Address -->
+            <div class="mb-3">
+                <label class="form-label">Address:</label>
+                <textarea class="form-control" rows="2"></textarea>
+            </div>
+            <!-- Button -->
+            <div class="mb-3">
+                <button class="btn btn-warning" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
