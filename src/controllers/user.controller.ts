@@ -1,9 +1,16 @@
 import { Request, Response } from "express";
-import { handleCreateUser } from "../services/user-services";
+import { getAllUsers, handleCreateUser } from "../services/user-services";
+import { name } from "ejs";
 
 // Home Page
-const getHomePage = (req: Request, res: Response) => {
-    return res.render('home');
+const getHomePage = async (req: Request, res: Response) => {
+    // get Users
+    const users = await getAllUsers();
+    console.log('>>> check user: ', users);
+
+    return res.render('home', {
+        users: users
+    });
 }
 // Create-User Method
 const getCreateUserPage = (req: Request, res: Response) => {
