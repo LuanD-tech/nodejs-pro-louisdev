@@ -6,8 +6,7 @@ import { name } from "ejs";
 const getHomePage = async (req: Request, res: Response) => {
     // get Users
     const users = await getAllUsers();
-    console.log('>>> check user: ', users);
-
+    
     return res.render('home', {
         users: users
     });
@@ -18,12 +17,12 @@ const getCreateUserPage = (req: Request, res: Response) => {
 }
 
 // Post-User Method
-const postCreateUser = (req,res) => {
+const postCreateUser = async (req,res) => {
 
     const {fullName, email, address} = req.body; 
 
     // handle create user
-    handleCreateUser(fullName, email, address)
+    await handleCreateUser(fullName, email, address)
 
     return res.redirect('/');
 }
