@@ -11,7 +11,7 @@ const handleCreateUser = async (
     
     try{
     // execute will internally call prepare and query
-        const sql = 'INSERT INTO `users`(`name`,`email`,`address`) VALUES (?, ?, ?)';
+        const sql = 'INSERT * INTO `users`(`name`,`email`,`address`) VALUES (?, ?, ?)';
         const values = [fullName, email, address];
 
         const [result, fields] = await connection.execute(sql, values);
@@ -42,7 +42,7 @@ const getAllUsers = async () => {
 const handleDeleteUser = async (id: string) => {
     try {
         const connection = await getConnection();
-        const sql = 'DELETE FROM `users` WHERE `id` = ?';
+        const sql = 'DELETE * FROM `users` WHERE `id` = ?';
         const values = [id];
       
         const [result, fields] = await connection.execute(sql, values);
@@ -55,4 +55,17 @@ const handleDeleteUser = async (id: string) => {
     }
 }
 
-export { handleCreateUser, getAllUsers, handleDeleteUser }
+const getUserById = async (id: string) => {
+    try {
+        const connection = await getConnection();
+        const sql = 'SELECT * FROM `users` WHERE `id` = ?';
+        const values = [id];
+        const [result, fields] = await connection.execute(sql, values);
+        return result[0];
+    } catch (err) {
+        console.log(err);
+        return [];
+    }
+}
+
+export { handleCreateUser, getAllUsers, handleDeleteUser, getUserById }
