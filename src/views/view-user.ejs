@@ -12,10 +12,11 @@
     <div style="width: 600; margin: auto">
         <h3 style="padding: 10px 0;">View Detail User id = <%= id %> </h3>
         <form action="/handle-update-user" method="post">
+            <input style="display: none;" name="id" value="<%= user.id %>">
             <!-- Name -->
             <div class="mb-3">
                 <label class="form-label">Full Name:</label>
-                <input
+                <input 
                 value="<%= user.name %>"
                 name="fullname" type="text" class="form-control" placeholder="your name">
             </div>
