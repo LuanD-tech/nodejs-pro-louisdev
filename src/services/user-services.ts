@@ -11,7 +11,7 @@ const handleCreateUser = async (
     
     try{
     // execute will internally call prepare and query
-        const sql = 'INSERT * INTO `users`(`name`,`email`,`address`) VALUES (?, ?, ?)';
+        const sql = 'INSERT INTO `users`(`name`,`email`,`address`) VALUES (?, ?, ?)';
         const values = [fullName, email, address];
 
         const [result, fields] = await connection.execute(sql, values);
@@ -30,9 +30,7 @@ const getAllUsers = async () => {
         const [results, fields] = await connection.query(
             'SELECT * FROM `users`'
         );
-
         return results;
-
     } catch (err) {
         console.log(err);
         return [];
@@ -42,7 +40,7 @@ const getAllUsers = async () => {
 const handleDeleteUser = async (id: string) => {
     try {
         const connection = await getConnection();
-        const sql = 'DELETE * FROM `users` WHERE `id` = ?';
+        const sql = 'DELETE FROM `users` WHERE `id` = ?';
         const values = [id];
       
         const [result, fields] = await connection.execute(sql, values);
@@ -75,7 +73,9 @@ const updateUserById = async (id: string, email: string, address: string, fullNa
         const sql = 'UPDATE `users` SET `name` = ?, `email` = ?, `address` = ? WHERE `id` = ?';
         const values = [fullName, email, address, id];
         const [result, fields] = await connection.execute(sql, values);
+
         return result;
+
     } catch (err) {
         console.log(err);
         return [];
