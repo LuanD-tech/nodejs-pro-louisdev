@@ -39,7 +39,7 @@ const getUserById = async (id: string) => {
 // Update User By ID
 const updateUserById = async (id: string, email: string, address: string, fullName: string) => {
     const updatedUser = await prisma.user.update({
-        where: {id: +id}, //thêm dấu cộng biến từ String thành INT chỉ dùng cho JS
+        where: {id: +id}, //thêm dấu cộng convert từ String thành INT chỉ dùng cho JS
         data: {
             name: fullName,
             email: email,
