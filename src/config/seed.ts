@@ -3,7 +3,7 @@ import { prisma } from "config/client";
 const initDatabase = async () => {
     const countUser = await prisma.user.count();
     if (countUser === 0) {
-        await prisma.user.createMany({
+        prisma.user.createMany({
             data: [
                 {
                     username: "louisdev@email.com",
