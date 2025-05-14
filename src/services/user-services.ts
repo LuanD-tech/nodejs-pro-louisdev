@@ -11,9 +11,11 @@ const handleCreateUser = async (
     // Method Create Of Prisma
     const newUser = await prisma.user.create({
         data: {
-            name: fullName,
-            email: email,
-            address: address
+            fullName: fullName,
+            username: email,
+            address: address,
+            password: "",
+            accountType: ""
         }
     })
     return newUser;
@@ -41,9 +43,11 @@ const updateUserById = async (id: string, email: string, address: string, fullNa
     const updatedUser = await prisma.user.update({
         where: {id: +id}, //thêm dấu cộng convert từ String thành INT chỉ dùng cho JS
         data: {
-            name: fullName,
-            email: email,
-            address: address
+            fullName: fullName,
+            username: email,
+            address: address,
+            password: "",
+            accountType: ""
         }
     })
     return updatedUser;
