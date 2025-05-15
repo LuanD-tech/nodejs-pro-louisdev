@@ -3,7 +3,13 @@ import { Request, Response } from "express";
 // / Home Page
 const getDashboardPage = async (req: Request, res: Response) => {
 
-    return res.render('admin/dashboard.ejs');
+    return res.render('admin/dashboard/show.ejs');
 }
 
-export {getDashboardPage}
+// / Admin Page
+const getAdminUserPage = async (req: Request, res: Response) => {
+
+    return res.render('admin/user/show.ejs');
+}
+
+export {getDashboardPage, getAdminUserPage}
