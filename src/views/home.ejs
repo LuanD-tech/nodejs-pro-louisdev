@@ -19,6 +19,7 @@
         </div>
     </div>
     <hr />
+    
     <div>
         <table class="table table-hover table-bordered">
             <thead>
@@ -29,8 +30,7 @@
                 <th>Action</th>
             </thead>
             <tbody>
-                <% users.forEach(function (user) {%>
-                    
+                <% users.forEach(function (user) {%>                
                     <tr>
                         <td><%= user.id %></td>
                         <td><%= user.name %></td>
@@ -49,8 +49,7 @@
                             </div>
                         </td>
                     </tr>
-                <% }) %>
-                
+                <% }) %>                
             </tbody>
         </table>
     </div>

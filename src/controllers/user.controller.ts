@@ -12,7 +12,7 @@ const getHomePage = async (req: Request, res: Response) => {
 }
 // Create-User Method
 const getCreateUserPage = (req: Request, res: Response) => {
-    return res.render('create-user');
+    return res.render('admin/user/create.ejs');
 }
 
 // Post-User Method

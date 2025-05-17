@@ -1,13 +1,12 @@
 import express, {Express} from 'express'
 import { getHomePage, getCreateUserPage, postCreateUser, postDeleteUser, getViewUser, postUpdateUser } from 'controllers/user.controller';
-import { getAdminUserPage, getDashboardPage } from 'controllers/admin/dashboard.controller';
+import { getAdminUserPage, getDashboardPage, getAdminProductPage, getAdminOrderPage } from 'controllers/admin/dashboard.controller';
 
 const router = express.Router();
 
 const webRoutes = (app: Express) => {
     // GET Method
     router.get('/', getHomePage);
-    router.get('/create-user', getCreateUserPage);
     router.get('/handle-view-user/:id', getViewUser);
     // POST Method
     router.post('/handle-create-user', postCreateUser);
@@ -16,7 +15,12 @@ const webRoutes = (app: Express) => {
     
     // adin routes
     router.get('/admin', getDashboardPage);
+    // Admin User
     router.get('/admin/user', getAdminUserPage);
+    router.get('/admin/create-user', getCreateUserPage);
+
+    router.get('/admin/product', getAdminProductPage);
+    router.get('/admin/order', getAdminOrderPage);
     
     app.use('/', router);
 }
